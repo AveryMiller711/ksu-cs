@@ -30,7 +30,3 @@
 *.exe
 *.out
 *.app
-
-# Subversion and Evaluation folders
-.svn/
-EVAL/
