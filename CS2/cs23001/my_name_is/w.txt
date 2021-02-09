@@ -1,0 +1,24 @@
+ 17:23:34 up 23 days,  2:39, 22 users,  load average: 0.11, 0.22, 0.35
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+jmohler4 pts/0    24.140.8.80      12:08    3:18m  0.06s  0.06s -bash
+yzhou35  pts/2    24.4.114.82      11:45    5:31m  0.13s  0.13s -bash
+chaltric pts/1    173.88.248.19    16:25   58:08   0.02s  0.02s -bash
+amill297 pts/3    69.14.142.20     16:31   51:02   0.04s  0.04s -bash
+tsteph26 pts/5    24.144.159.122   16:33    1:34   0.18s  0.18s -bash
+legts    pts/7    65.29.195.11     16:39   54.00s  0.07s  0.07s -bash
+lcoduto  pts/8    76.190.218.170   16:45    3.00s  0.08s  0.08s -bash
+rbricke2 pts/12   162.236.45.102   16:40    3:00   0.05s  0.05s -bash
+snerkows pts/13   65.185.77.198    16:43   52.00s  0.04s  0.04s -bash
+drobin   pts/14   173.88.249.140   16:47   41.00s  0.07s  0.07s -bash
+dbian    pts/15   174.104.217.41   16:42   32.00s  0.05s  0.05s -bash
+speter61 pts/16   10.12.43.96      16:43   50.00s  0.05s  0.05s -bash
+nwainwri pts/17   75.109.230.168   16:45   52.00s  0.05s  0.05s -bash
+fdawson1 pts/19   10.12.98.12      17:05    3:53   0.03s  0.03s -bash
+chaltric pts/20   173.88.248.19    16:53    6.00s  0.14s  0.14s -bash
+yshaikh  pts/21   174.104.124.110  16:55    1:13   0.07s  0.07s -bash
+amill297 pts/22   69.14.142.20     16:57   22:45   0.04s  0.04s -bash
+amill297 pts/23   69.14.142.20     17:09    5.00s  0.07s  0.01s w
+escheue2 pts/24   10.12.167.47     17:01   38.00s  0.05s  0.05s -bash
+rsilvey1 pts/34   70.92.127.94     13:23   14:12   6.37s  6.08s emacs diff.cpp
+badams44 pts/10   174.104.116.17   16:38    1:57   0.11s  0.11s -bash
+cdehoff  pts/11   96.63.252.28     16:46   42.00s  0.05s  0.05s -bash
