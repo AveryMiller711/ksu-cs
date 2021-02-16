@@ -1,6 +1,8 @@
+//String.hpp
 //
-//
-//
+//Avery Miller
+//String ADT
+//02/10/2021
 
 #include <iostream>
 #include <cassert>
