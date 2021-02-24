@@ -42,7 +42,6 @@ Darray& Darray::operator=(const Darray& rhs) {
             ptr[i] = rhs.ptr[i];
         }
     }
-
     return *this;
 }
 
