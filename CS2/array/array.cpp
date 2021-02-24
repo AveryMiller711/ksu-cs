@@ -70,3 +70,20 @@ int& Darray::operator[](int i) {
     assert(i >= 0 && i < cap);
     return ptr[i];
 }
+
+// REQUIRES: 0 <= newCapacity
+void Darray::resize(int newCapacity) {
+    // Allocate new memory
+    int smaller = cap;
+    if(smaller > newCapacity) smaller = newCapacity;
+
+    int *tmp = new int[newCapacity];
+    
+    // Copy old into new (smaller or larger)
+    for(int i = 0; i < smaller; ++i) tmp[i] = ptr[i];
+    cap = newCapacity;
+
+    // Clean up old memory
+    delete[] ptr;
+    ptr = tmp;
+}
