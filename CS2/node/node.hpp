@@ -51,17 +51,43 @@ T stack<T>::pop() {
 
 template <typename T>
 stack<T>::~Stack() {
-
+    node<T> *temp;
+    while(tos != 0) {
+        temp = tos;
+        tos = tos->next;
+        delete temp;
+    }
 }
 
 template <typename T>
-stack<T>::stack(const stack<T>& actual) {
-
+stack<T>::stack(const stack<T>& actual) : stack() {
+    node<T> *temp = actual.tos;
+    node<T> *bottom;
+    while(temp != 0) {
+        if(tos == 0) {
+            tos = new node<T>(temp->data);
+            bottom = tos;
+        } else {
+            bottom->next = new node<T>(temp->data);
+            bottom = bottom->next;
+        }
+        temp = temp->next;
+    }
 }
 
 template <typename T>
 void stack<T>::swap(stack& rhs) {
+    node<T> *temp = tos;
+    tos = rhs.tos;
+    rhs.tos = temp;
+}
 
+template <typename T>
+bool stack<T>::isFull() const {
+    node<T> *temp = new(std::nothrow) node<T>();
+    if(temp == 0) return true;  //No more memory to allocate
+    delete temp;
+    return false;
 }
 
 int main() {
