@@ -1,6 +1,9 @@
 //
 //
 
+#ifndef QUEUE_HPP
+#define QUEUE_HPP
+
 //CLASS INV: beginning -> x1 -> x2 -> ... xN <- ending
 //
 template <typename T>
@@ -57,3 +60,30 @@ queue<T>::~queue() {
         delete temp;
     }
 }
+
+template <typename T>
+queue<T>::queue(const queue<T>& actual) : queue() {
+    node<T> *temp = actual.beginning;
+    while(temp != 0) {
+        if(beginning == 0) {
+            beginning = new node(temp->data);
+            ending = beginning;
+        } else {
+            ending->next = new node(temp->data);
+            ending = ending->next;
+        }
+        temp = temp->next;
+    }
+}
+
+template <typename T>
+void queue<T>::swap(queue<T>& rhs) {
+    node<T> *temp = beginning;
+    beginning = rhs.beginning;
+    rhs.beginning = temp;
+    temp = ending;
+    ending = rhs.ending;
+    rhs.ending = temp;
+}
+
+#endif
