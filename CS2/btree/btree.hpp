@@ -12,7 +12,7 @@ public:
               ~btree();
               btree (const btree<T>&);
     void      swap  (btree<T>&);
-    btree<T>& btree (btree<T> rhs) { swap(rhs); return *this; };
+    btree<T>& operator=(btree<T> rhs) { swap(rhs); return *this; };
 
     bool      isEmpty  () const { return empty; };
     bool      isFull   () const;
