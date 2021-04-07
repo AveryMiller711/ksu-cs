@@ -1,4 +1,3 @@
-
 #ifndef BTREEV2_HPP_
 #define BTREEV2_HPP_
 
@@ -29,14 +28,14 @@ private:
 template <typename T>
 class bnode {
 public:
-         bnode      () : left(0), right(0) {};
-         bnode      (const T& item) : left(0), right(0), data(item) {};
-         bnode      (const bnode<T>&);
-         ~bnode     ();
-    bool find       (const T&) const;
-    void binsert    (const T&);
-    void bremove    (const T&);
-    T    predecessor() const;
+              bnode      () : left(0), right(0) {};
+              bnode      (const T& item) : left(0), right(0), data(item) {};
+              bnode      (const bnode<T>&);
+              ~bnode     ();
+    bool      find       (const T&) const;
+    void      binsert    (const T&);
+    bnode<T>* bremove    (const T&);
+    T         predecessor() const;
 
 private:
     bnode<T> *left;
@@ -118,7 +117,44 @@ bnode<T>::~bnode() {
 
 template <typename T>
 T bnode<T>::predecessor() const {
-    
+    if(right) return right->predecessor();
+    return data;
+}
+
+template <typename T>
+void btree<T>::bremove(const T& x) {
+    if(find(x)) root = root->bremove(x);
+}
+
+template <typename T>
+bnode<T>* bnode<T>::bremove(const T& x) {
+    if(x == data) {
+        if(!left && !right) { //No children
+            delete this;
+            return 0;
+        }
+        if(!left && right) { //Right child only
+            bnode<T> *temp = right;
+            right = 0;
+            delete this;
+            return temp;
+        }
+        if(left && !right) { //Left child only
+            bnode<T> *temp = left;
+            left = 0;
+            delete this;
+            return temp;
+        }
+        data = left->predecessor(); //Two children
+        left = left-bremove(data);
+        return this;
+    } else {
+        if(x < data)
+            left = left->bremove(x);
+        else
+            right = right->bremove(x);
+    }
+    return this;
 }
 
 #endif

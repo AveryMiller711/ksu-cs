@@ -18,7 +18,7 @@ public:
             stack() : tos(0) {};
             ~stack();
             stack(const stack&);
-    stack&  operator=(stack rhs) {swap(rhs); return *this; };
+    stack&  operator=(stack rhs) { swap(rhs); return *this; };
     void    swap(stack&);
     bool    isEmpty() const { return tos == 0; };
     bool    isFull() const;
@@ -26,7 +26,7 @@ public:
     T       top() const { assert(!isEmpty()); return tos->data; };
     void    push(const T&);
 private:
-    note<T> *tos;
+    node<T> *tos;
 };
 
 //REQUIRES: tos -> x1 -> x2 -> ... -> xN -> 0
